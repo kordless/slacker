@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: slacker
+  labels:
+    name: slacker
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: slacker
+        app: slacker
+    spec:
+      containers:
+      - name: slacker
+        image: "kordinator/slacker:latest"
